@@ -14,6 +14,14 @@
       .clearfix{
          overflow: auto;
       }
+     #pdf{
+         width: 100%;
+        }
+      .header{
+         height: 200px;
+         padding: 0!important;
+         background-color: #def3fc;
+        }
    </style>
 </head>
 <body style="background-color:#D0CDD5;">
@@ -140,8 +148,9 @@
             </nav>
         </div>
     </div> 
-    <div class="container-fluid" id="pdf" style="padding-left: 0!important;padding-right: 0!important;background-color: #fce5de;">
-      <div class="col-xs-12 text-center" style="padding: 0!important;"><h2>ABHISHEK DHAKAD</h2></div>
+    <div class="container-fluid" id="pdf" style="padding-left: 0!important;padding-right: 0!important;">
+        <div class="col-xs-8 text-center header"><h2>ABHISHEK DHAKAD</h2></div>
+        <div class="col-xs-4 header"></div>
     </div>
     <input style="width:120px;height: 40px;background:linear-gradient(to right, #26de81,aquamarine);color: #fff;border:none;border-radius: 3px;" type="button" id="btnExport" value="PDF" />          
 
@@ -179,8 +188,10 @@
                     var docDefinition = {
                         content: [{
                             image: data,
-                            width: 550
-                        }]
+                            width:600,
+                            marginTop:-40,
+                            marginLeft:-40,
+                        }],
                     };
                     pdfMake.createPdf(docDefinition).download("Table.pdf");
                 }
